@@ -1,0 +1,27 @@
+# intialize a git repo
+```
+git init -b main // create a new repo with main branch
+git add . // add all files to staging area
+git commit -m "first commit" // commit changes
+// adding a local repo to github
+
+# create a new repo on github
+git remote add origin REMOTE_URL // add remote repo
+git remote -v // verify remote repo
+git push origin main // push changes to remote repo
+
+# create a new branch
+git branch BRANCH_NAME // create a new branch
+git checkout BRANCH_NAME // switch to new branch
+git push origin BRANCH_NAME // push changes to remote repo
+
+# merge branches
+git checkout main // switch to main branch
+git merge BRANCH_NAME // merge branch to main
+git push origin main // push changes to remote repo
+# delete branch
+git branch -d BRANCH_NAME // delete branch locally
+git push origin --delete BRANCH_NAME // delete branch remotely
+# pull changes from remote repo
+git pull origin main // pull changes from remote repo
+```
