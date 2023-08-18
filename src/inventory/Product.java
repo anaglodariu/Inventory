@@ -6,6 +6,7 @@ public class Product {
     private String name;
     private int quantityInStock;
     private double price;
+    private boolean active;
 
     //default constructor
     public Product() {
@@ -16,8 +17,15 @@ public class Product {
         this.name = name;
         this.quantityInStock = quantityInStock;
         this.price = price;
+        this.active = true;
     }
 
+    public boolean getActive() {
+        return active;
+    }
+    public void setActive(boolean active) {
+        this.active = active;
+    }
     //getters and setters
     public int getId() {
         return id;
@@ -26,7 +34,7 @@ public class Product {
         this.id = id;
     }
 
-     public String getName() {
+    public String getName() {
         return name;
     }
     public void setName(String name) {
@@ -47,6 +55,10 @@ public class Product {
         this.price = price;
     }
 
+    public double getInventoryValue() {
+        return price * quantityInStock;
+    }
+
     //toString method
     @Override
     public String toString() {
@@ -54,7 +66,9 @@ public class Product {
         output =  "Item Number      : " + id + "\n"
                 + "Name             : " + name + "\n"
                 + "Quantity in Stock: " + quantityInStock + "\n"
-                + "Price            : " + price + "lei\n";
+                + "Price            : " + price + " lei\n"
+                + "Stock Value      : " + getInventoryValue() + " lei\n"
+                + "Product Status   : " + (active ? "Active":"Discontinued") + "\n";
         return output;
     }
 }
