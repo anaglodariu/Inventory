@@ -20,3 +20,8 @@ there are 2 classes:</p>
 <h2>Inspiration</h2>
 <p>This personal project was inspired by the <strong>JF Java Fundamentals Learner course on ORACLE Academy</strong>. It was made for learning purposes.</p>
 <p><img alt="Source Material" title="Java Fundamentals" src="Java_Fundamentals.png"/></p>
+<h2>How to compile and run the project in terminal</h2>
+<ul>
+<li>For compiling the project use command in terminal from the <em>src</em> directory:<br> <strong>javac inventory/ProductTester.java inventory/Product.java</strong></li>
+<li>For running the project use command in terminal from the <em>src</em> directory:<br> <strong>java inventory.ProductTester</strong></li>
+</ul>
