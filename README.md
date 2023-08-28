@@ -11,11 +11,16 @@ there are 2 classes:</p>
 <ul>
 <li>Adding products to the inventory</li>
 <li>Viewing products that are stored</li>
+<li>Add to/Remove from the number of units in stock for a certain product</li>
 </ul>
 <h2>OOP concepts used</h2>
 <ul>
 <li><strong>Encapsulation</strong>: in the Product class the instance fields are declared as private.</li>
 <li><strong>Polymorphism</strong>: through the use of overriding instance methods</li>
+</ul>
+<h2>Other concepts used</h2>
+<ul>
+<li>The use of <strong>static methods</strong> in the <strong>driver class</strong> in order to make the code <em>more modular, easier to read and understand</em></li>
 </ul>
 <h2>Inspiration</h2>
 <p>This personal project was inspired by the <strong>JF Java Fundamentals Learner course on ORACLE Academy</strong>. It was made for learning purposes.</p>

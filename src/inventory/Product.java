@@ -20,6 +20,7 @@ public class Product {
         this.active = true;
     }
 
+    //getters and setters
     public boolean getActive() {
         return active;
     }
@@ -40,14 +41,14 @@ public class Product {
         this.name = name;
     }
 
-     public int getQuantityInStock() {
+    public int getQuantityInStock() {
         return quantityInStock;
     }
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
 
-     public double getPrice() {
+    public double getPrice() {
         return price;
     }
     public void setPrice(double price) {
@@ -56,6 +57,16 @@ public class Product {
 
     public double getInventoryValue() {
         return price * quantityInStock;
+    }
+
+    // the user can add to the number of units in stock
+    public void addToInventory(int quantity) {
+        quantityInStock += quantity;
+    }
+
+    // the user can deduct from the number of units in stock
+    public void deductFromInventory(int quantity) {
+        quantityInStock -= quantity;
     }
 
     //toString method

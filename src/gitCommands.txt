@@ -1,5 +1,5 @@
-# intialize a git repo
 ```
+# intialize a git repo
 git init -b main // create a new repo with main branch
 git add . // add all files to staging area
 git commit -m "first commit" // commit changes
@@ -19,9 +19,11 @@ git push origin BRANCH_NAME // push changes to remote repo
 git checkout main // switch to main branch
 git merge BRANCH_NAME // merge branch to main
 git push origin main // push changes to remote repo
+
 # delete branch
 git branch -d BRANCH_NAME // delete branch locally
 git push origin --delete BRANCH_NAME // delete branch remotely
+
 # pull changes from remote repo
 git pull origin main // pull changes from remote repo
 ```
