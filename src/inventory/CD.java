@@ -43,9 +43,9 @@ public class CD extends Product {
                 "\nArtist           : " + artist +
                 "\nSongs on Album   : " + numberOfSongs +
                 "\nRecord Label     : " + label +
-                "\nQuantity in Stock: " + super.getQuantityInStock() + " lei" +
+                "\nQuantity in Stock: " + super.getQuantityInStock() +
                 "\nPrice            : " + super.getPrice() + " lei" +
-                "\nStock Value      : " + super.getInventoryValue() +
+                "\nStock Value      : " + super.getInventoryValue() + " lei" +
                 "\nProduct Status   : " + (super.getActive() ? "Active":"Discontinued");
     }
 

@@ -1,15 +1,16 @@
 <h1>Inventory Project</h1>
 <h2>Overview</h2>
-<p>This is an inventory program that can be used for a range of different products (cds, dvd, software, etc).
+<p>This is an inventory program that can be used for storing CDs and DVDs.
 The <em>language</em> used for the program is <strong>Object-Oriented Programming</strong>, therefore
 there are 2 classes:</p>
 <ul> 
 <li><em>the driver class</em>: <strong>ProductTester</strong>, which is in charge of running the object class</li> 
 <li><em>the object class</em>: <strong>Product</strong></li>
+<li><em>2 subclasses of the Product superclass</em>: <strong>DVD</strong> and <strong>CD</strong></li>
 </ul>
 <h2>Features</h2>
 <ul>
-<li>Adding products to the inventory</li>
+<li>Adding products to the inventory depending on its type</li>
 <li>Viewing products that are stored</li>
 <li>Add to/Remove from the number of units in stock for a certain product</li>
 <li>Discontinue product sale</li>
@@ -19,7 +20,7 @@ there are 2 classes:</p>
 <ul>
 <li><strong>Encapsulation</strong>: in the Product class the instance fields are declared as private.</li>
 <li><strong>Inheritance</strong>: by creating subclasses of the Product class</li>
-<li><strong>Polymorphism</strong>: through the use of overriding instance methods</li>
+<li><strong>Polymorphism</strong>: when creating CD or DVD objects instead of a generic product object</li>
 </ul>
 <h2>Other concepts used</h2>
 <ul>
