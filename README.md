@@ -12,6 +12,8 @@ there are 2 classes:</p>
 <li>Adding products to the inventory</li>
 <li>Viewing products that are stored</li>
 <li>Add to/Remove from the number of units in stock for a certain product</li>
+<li>Discontinue product sale</li>
+<li>Implementing a user interface: a <strong>MENU</strong> the user can choose from what changes to apply to the inventory</li>
 </ul>
 <h2>OOP concepts used</h2>
 <ul>
