@@ -61,12 +61,22 @@ public class Product {
 
     // the user can add to the number of units in stock
     public void addToInventory(int quantity) {
-        quantityInStock += quantity;
+        if (this.active) {
+            quantityInStock += quantity;
+            System.out.println("Inventory updated successfully.");
+        } else {
+            System.out.println("This product is discontinued. You cannot add to the inventory.");
+        }
     }
 
     // the user can deduct from the number of units in stock
     public void deductFromInventory(int quantity) {
-        quantityInStock -= quantity;
+       if (this.active) {
+           quantityInStock -= quantity;
+           System.out.println("Inventory updated successfully.");
+       } else {
+              System.out.println("This product is discontinued. You cannot deduct from the inventory.");
+       }
     }
 
     //toString method

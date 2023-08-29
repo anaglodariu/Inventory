@@ -1,6 +1,6 @@
 <h1>Inventory Project</h1>
 <h2>Overview</h2>
-<p>This is an inventory program that can be used for a range of different products.
+<p>This is an inventory program that can be used for a range of different products (cds, dvd, software, etc).
 The <em>language</em> used for the program is <strong>Object-Oriented Programming</strong>, therefore
 there are 2 classes:</p>
 <ul> 
@@ -18,6 +18,7 @@ there are 2 classes:</p>
 <h2>OOP concepts used</h2>
 <ul>
 <li><strong>Encapsulation</strong>: in the Product class the instance fields are declared as private.</li>
+<li><strong>Inheritance</strong>: by creating subclasses of the Product class</li>
 <li><strong>Polymorphism</strong>: through the use of overriding instance methods</li>
 </ul>
 <h2>Other concepts used</h2>

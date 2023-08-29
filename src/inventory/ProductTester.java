@@ -18,8 +18,6 @@ public class ProductTester {
                 System.out.println("You chose menu option " + menuChoice);
                 executeMenuChoice(products, menuChoice, in);
             } while (menuChoice != 0);
-
-            //displayInventory(products);
         }
         in.close();
     }
@@ -32,19 +30,83 @@ public class ProductTester {
     }
 
     public static void addToInventory(Product[] products, Scanner in) {
+        int stockChoice = -1;
+        String prompt = """
+               What type of product do you want to add?
+                1. CD
+                2. DVD
+                PLease enter the product type:
+                """;
+
         for (int i = 0; i < products.length; i++) {
-            System.out.println("Enter the product id: ");
-            int tempId = in.nextInt();
-            String temp = in.nextLine();
-            System.out.println("Enter the product name: ");
-            String tempName = in.nextLine();
-            System.out.println("Enter the product quantity: ");
-            int tempQty = in.nextInt();
-            System.out.println("Enter the product price: ");
-            double tempPrice = in.nextDouble();
-            products[i] = new Product(tempId, tempName, tempQty, tempPrice);
-            //products[i].setActive(false);
+            System.out.print(prompt);
+            do {
+                try {
+                    stockChoice = in.nextInt();
+                    if (stockChoice < 1 || stockChoice > 2) {
+                        throw new Exception();
+                    }
+                } catch (InputMismatchException e1) {
+                    System.out.println("Cannot enter a string. Please enter 1 or 2.");
+                    System.out.print(prompt);
+                    in.nextLine();
+                } catch (Exception e2) {
+                    System.out.println("Only number 1 or 2 are allowed. Please try again.");
+                    System.out.print(prompt);
+                    in.nextLine();
+                }
+            } while(stockChoice < 1 || stockChoice > 2);
+            switch (stockChoice) {
+                case 1:
+                    addCDToInventory(products, in, i);
+                    break;
+                case 2:
+                    addDVDToInventory(products, in, i);
+                    break;
+                default:
+            }
         }
+    }
+
+    public static void addCDToInventory(Product[] products, Scanner in, int index) {
+        System.out.println("Enter the product id: ");
+        int tempId = in.nextInt();
+        String temp = in.nextLine();
+        System.out.println("Enter the CD name: ");
+        String tempName = in.nextLine();
+        System.out.println("Enter the product quantity: ");
+        int tempQty = in.nextInt();
+        System.out.println("Enter the product price: ");
+        double tempPrice = in.nextDouble();
+        temp = in.nextLine();
+        System.out.println("Enter the artist: ");
+        String tempArtist = in.nextLine();
+        System.out.println("Enter the number of songs: ");
+        int tempNumSongs = in.nextInt();
+        temp = in.nextLine();
+        System.out.println("Enter the record label: ");
+        String tempLabel = in.nextLine();
+        products[index] = new CD(tempId, tempName, tempQty, tempPrice, tempArtist, tempNumSongs, tempLabel);
+    }
+
+    public static void addDVDToInventory(Product[] products, Scanner in, int index) {
+        System.out.println("Enter the product id: ");
+        int tempId = in.nextInt();
+        String temp = in.nextLine();
+        System.out.println("Enter the DVD name: ");
+        String tempName = in.nextLine();
+        System.out.println("Enter the product quantity: ");
+        int tempQty = in.nextInt();
+        System.out.println("Enter the product price: ");
+        double tempPrice = in.nextDouble();
+        System.out.println("Enter the length in minutes: ");
+        int tempLength = in.nextInt();
+        System.out.println("Enter the age rating: ");
+        int tempAgeRating = in.nextInt();
+        temp = in.nextLine();
+        System.out.println("Enter the film studio name: ");
+        String tempFilmStudio = in.nextLine();
+        products[index] = new DVD(tempId, tempName, tempQty, tempPrice, tempLength, tempAgeRating, tempFilmStudio);
     }
 
     public static int getNumProducts(Scanner in) {
@@ -59,12 +121,10 @@ public class ProductTester {
                 }
             } catch (InputMismatchException e1) {
                 System.out.println("Cannot enter a string. Please enter a number.");
-                // clear the buffer
                 in.nextLine();
 
             } catch (Exception e2) {
                 System.out.println("Negative value entered. Please try again.");
-                // clear the buffer
                 in.nextLine();
             }
         } while (maxSize < 0);
@@ -93,13 +153,11 @@ public class ProductTester {
             } catch (InputMismatchException e1) {
                 System.out.println("Cannot enter a string. Please enter a number.");
                 System.out.println("Please enter a menu option:");
-                // clear the buffer
                 in.nextLine();
 
             } catch (Exception e2) {
                 System.out.println("Invalid value entered. Please try again.");
                 System.out.println("Please enter a menu option:");
-                // clear the buffer
                 in.nextLine();
             }
         } while(menuChoice < 0 || menuChoice > 4);
@@ -154,7 +212,6 @@ public class ProductTester {
             }
         } while(updateValue < 0);
         products[productChoice].addToInventory(updateValue);
-        System.out.println("Inventory updated successfully.");
     }
 
     public static void deductInventory(Product[] products, Scanner in) {
