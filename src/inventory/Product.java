@@ -1,6 +1,6 @@
 package inventory;
 
-public class Product {
+public abstract class Product {
     //Instance field declarations
     private int id;
     private String name;
